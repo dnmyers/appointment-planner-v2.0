@@ -1,0 +1,20 @@
+/* eslint-disable react/prop-types */
+import './ContactPicker.css';
+
+export const ContactPicker = ({ contacts, onChange, value, name }) => {
+    return (
+        <>
+            <label htmlFor='contact-select'>
+                Select a contact:
+            </label>
+            <select name={name} value={value} onChange={onChange} id="contact-select">
+                <option value="">No Contact Selected</option>
+                {
+                    contacts.map(contact => (
+                        <option key={contact.name} value={contact.name}></option>
+                    ))
+                }
+            </select>
+        </>
+    );
+};
