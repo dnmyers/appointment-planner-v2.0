@@ -36,15 +36,15 @@ export const AppointmentsPage = ({ appointments, contacts, addAppointment }) => 
             <section>
                 <h2>Add Appointment</h2>
                 <AppointmentForm
-                    contacts={contacts}
-                    title={title}
-                    setTitle={setTitle}
+                    name={title}
+                    setName={setTitle}
                     contact={contact}
                     setContact={setContact}
                     date={date}
                     setDate={setDate}
                     time={time}
                     setTime={setTime}
+                    contacts={contacts}
                     handleSubmit={handleSubmit}
                 />
             </section>

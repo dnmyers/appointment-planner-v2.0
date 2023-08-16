@@ -8,7 +8,7 @@ import { TileList } from '../../components/tileList/TileList';
 export const AppointmentsPage = ({ appointments, contacts, addAppointment }) => {
 
     // state variables for appointment info
-    const [title, setTitle] = useState('');
+    const [name, setName] = useState('');
     const [contact, setContact] = useState('');
     const [date, setDate] = useState('');
     const [time, setTime] = useState('');
@@ -18,14 +18,14 @@ export const AppointmentsPage = ({ appointments, contacts, addAppointment }) => 
 
         // Add appointment
         addAppointment({
-            name: title,
+            name,
             contact,
             date,
             time
         });
 
         // Clear form
-        setTitle('');
+        setName('');
         setContact('');
         setDate('');
         setTime('');
@@ -36,15 +36,15 @@ export const AppointmentsPage = ({ appointments, contacts, addAppointment }) => 
             <section>
                 <h2>Add Appointment</h2>
                 <AppointmentForm
-                    contacts={contacts}
-                    title={title}
-                    setTitle={setTitle}
+                    name={name}
+                    setName={setName}
                     contact={contact}
                     setContact={setContact}
                     date={date}
                     setDate={setDate}
                     time={time}
                     setTime={setTime}
+                    contacts={contacts}
                     handleSubmit={handleSubmit}
                 />
             </section>
